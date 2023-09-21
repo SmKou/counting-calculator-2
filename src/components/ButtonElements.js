@@ -1,9 +1,26 @@
 import styled from 'styled-components'
 
-export const Row = styled.div``
+export const Row = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+`
 
 export const DisplayButton = styled.button`
-    .active {}
+    position: relative;
+    width: 50%;
+    height: 48px;
+    border: 1px solid beige;
+    outline: 0;
+    padding-bottom: 6px;
+    color: #111;
+    background: #F4E2D8;
+    font-size: 30px;
+    text-align: right;
+    cursor: pointer;
+    .active {
+        background: #ba537060, #f4e2d8;
+    }
 `
 
 export const ResetButton = styled.button`
