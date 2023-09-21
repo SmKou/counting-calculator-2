@@ -30,15 +30,22 @@ function CountingCalculator() {
     const dispatch = useDispatch()
 
     const [focus, setFocus] = useState(display.Count)
+    const [countValue, setCountValue] = useState(0);
+    const updateCount = () => setCountValue(count)
+    const [stepValue, setStepValue] = useState(1);
+    const updateStep = () => setStepValue(step)
+
     const changeDisplay = (num) => {
         switch (focus) {
             case display.Count:
                 const addValue = [count, num].join('')
                 dispatch(setCount(Number(addValue) || 0))
+                updateCount()
                 break
             case display.Step:
                 const addStep = [step, num].join('')
                 dispatch(setStep(Number(addStep) || 0))
+                updateStep()
                 break
             default:
                 console.log('Change display: No focus selected')
@@ -50,9 +57,11 @@ function CountingCalculator() {
             case display.Count:
                 dispatch(stackPrevious(count))
                 dispatch(incrementValue())
+                updateCount()
                 break
             case display.Step:
                 dispatch(incrementStep())
+                updateStep()
                 break
             default:
                 console.log('Increment: No focus selected')
@@ -64,9 +73,11 @@ function CountingCalculator() {
             case display.Count:
                 dispatch(stackPrevious(count))
                 dispatch(decrementValue())
+                updateCount()
                 break
             case display.Step:
                 dispatch(decrementStep())
+                updateStep()
                 break
             default:
                 console.log('Decrement: No focus selected')
@@ -77,13 +88,24 @@ function CountingCalculator() {
         const num = prev.length ? prev[prev.length - 1] : 0
         dispatch(setCount(Number(num)))
         dispatch(unstackPrevious())
+        updateCount()
     }
 
     return <section>
         <nav>
             <Row>
-                <DisplayButton aria-label='Select count' onClick={() => setFocus(display.Count)}>{count}</DisplayButton>
-                <DisplayButton aria-label='Select step' onClick={() => setFocus(display.Step)}>{step}</DisplayButton>
+                <DisplayButton
+                    className={focus === display.Count ? 'active' : ''}
+                    aria-label={`Current count: ${countValue}. Select count.`}
+                    onClick={() => setFocus(display.Count)}>
+                    {count}
+                </DisplayButton>
+                <DisplayButton
+                    className={focus === display.Step ? 'active' : ''}
+                    aria-label={`Current step: ${stepValue}. Select step.`}
+                    onClick={() => setFocus(display.Step)}>
+                    {step}
+                </DisplayButton>
             </Row>
             <Row>
                 <ResetButton aria-label='Reset count to last value' onClick={remove}>Previous Count</ResetButton>
