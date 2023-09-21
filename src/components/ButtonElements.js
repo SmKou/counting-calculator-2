@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+export const Row = styled.div``
+
 export const DisplayButton = styled.button`
     .active {}
 `
@@ -23,6 +25,7 @@ export const NumberButton = styled(Button)``
 export const OperatorButton = styled(Button)``
 
 export default {
+    Row,
     DisplayButton,
     ResetButton,
     NumberButton,
