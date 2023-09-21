@@ -67,6 +67,8 @@ git push origin gh-pages
     git subtree push --prefix dist origin gh-pages
     ```
 
+**Note:** If you're going to use Github Pages for deployment, you will need to change the urls for the assets in the dist index.html to include the name of the repo, otherwise it will query the general account, rather than the repo.
+
 ## Known Bugs
 
 - No support for keyboard input
