@@ -1,3 +1,4 @@
+import CountingCalculator from './components/Counter/CountingCalculator'
 import './App.css'
 
 function App() {
