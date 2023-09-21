@@ -97,16 +97,16 @@ function CountingCalculator() {
                 <OperatorButton aria-label='Plus' onClick={increment}>+</OperatorButton>
             </Row>
             <Row>
-                <NumberButton aria-label='Four' onClick={() => changeDisplay(4)}></NumberButton>
-                <NumberButton aria-label='Five' onClick={() => changeDisplay(5)}></NumberButton>
-                <NumberButton aria-label='Six' onClick={() => changeDisplay(6)}></NumberButton>
-                <OperatorButton aria-label='' onClick={decrement}></OperatorButton>
+                <NumberButton aria-label='Four' onClick={() => changeDisplay(4)}>4</NumberButton>
+                <NumberButton aria-label='Five' onClick={() => changeDisplay(5)}>5</NumberButton>
+                <NumberButton aria-label='Six' onClick={() => changeDisplay(6)}>6</NumberButton>
+                <OperatorButton aria-label='' onClick={decrement}>-</OperatorButton>
             </Row>
             <Row>
-                <NumberButton aria-label='Seven' onClick={() => changeDisplay(7)}></NumberButton>
-                <NumberButton aria-label='Eight' onClick={() => changeDisplay(8)}></NumberButton>
-                <NumberButton aria-label='Nine' onClick={() => changeDisplay(9)}></NumberButton>
-                <NumberButton aria-label='Zero' onClick={() => changeDisplay(0)}></NumberButton>
+                <NumberButton aria-label='Seven' onClick={() => changeDisplay(7)}>7</NumberButton>
+                <NumberButton aria-label='Eight' onClick={() => changeDisplay(8)}>8</NumberButton>
+                <NumberButton aria-label='Nine' onClick={() => changeDisplay(9)}>9</NumberButton>
+                <NumberButton aria-label='Zero' onClick={() => changeDisplay(0)}>0</NumberButton>
             </Row>
         </nav>
     </section>
