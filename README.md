@@ -4,10 +4,11 @@ By: Stella Marie
 
 Demo project using React and Redux.
 
-View on [Github Pages]()
+View on [Github Pages](smkou.github.io/counting-calculator-2)
 
 ## Technologies Used
 
+- Scaffolded with Vite
 - React 18
 - Redux Toolkit
 - Styled Components
